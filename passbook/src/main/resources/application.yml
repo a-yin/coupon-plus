@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: couponplus-passbook
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?autoReconnect=true&useSSL=false
+    username: root
+    password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: file:G:/DevWorkSpace/IDEA/coupon-plus/passbook/hbase_data
+      nodeParent: /hbase
+  kafka:
+      bootstrap-servers: 127.0.0.1:9092
+      consumer:
+        group-id: passbook
+      listener:
+        concurrency: 4
+
+server:
+  port: 80
+
+logging:
+  file: couponplus-passbook.log
+  level: debug

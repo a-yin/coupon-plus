@@ -1,10 +1,10 @@
-package com.lingb.couponplus.merchants;
+package com.lingb.couponplus.merchants.enum;
 
 /**
  * 错误码枚举
  *
  * @author lingb
- * @date 2019.02.15 11:31
+ * @date 2019.11.15 11:31
  */
 public enum ErrorCodeEnum {
 

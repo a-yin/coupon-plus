@@ -1,6 +1,6 @@
 package com.lingb.couponplus.passbook.mapper;
 
-import com.lingb.couponplus.passbook.constants.Constants;
+import com.lingb.couponplus.passbook.constant.Commons;
 import com.lingb.couponplus.passbook.vo.PassTemplate;
 import com.spring4all.spring.boot.starter.hbase.api.RowMapper;
 import org.apache.commons.lang3.time.DateUtils;
@@ -12,28 +12,28 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 PassTemplate 映射 PassTemplateVO
  *
  * @author lingb
- * @date 2019.02.14 16:15
+ * @date 2018.11.14 16:15
  */
 public class PassTemplateMapper implements RowMapper<PassTemplate> {
 
     /**
      * PassTemplate 中 BaseInfo列族
      */
-    private static byte[] FAMILY_B = Constants.PassTemplateTable.FAMILY_B.getBytes();
-    private static byte[] ID = Constants.PassTemplateTable.ID.getBytes();
-    private static byte[] TITLE = Constants.PassTemplateTable.TITLE.getBytes();
-    private static byte[] SUMMARY = Constants.PassTemplateTable.SUMMARY.getBytes();
-    private static byte[] DESC = Constants.PassTemplateTable.DESC.getBytes();
-    private static byte[] HAS_TOKEN = Constants.PassTemplateTable.HAS_TOKEN.getBytes();
-    private static byte[] BACKGROUND = Constants.PassTemplateTable.BACKGROUND.getBytes();
+    private static byte[] FAMILY_B = Commons.PassTemplateTable.FAMILY_B.getBytes();
+    private static byte[] ID = Commons.PassTemplateTable.ID.getBytes();
+    private static byte[] TITLE = Commons.PassTemplateTable.TITLE.getBytes();
+    private static byte[] SUMMARY = Commons.PassTemplateTable.SUMMARY.getBytes();
+    private static byte[] DESC = Commons.PassTemplateTable.DESC.getBytes();
+    private static byte[] HAS_TOKEN = Commons.PassTemplateTable.HAS_TOKEN.getBytes();
+    private static byte[] BACKGROUND = Commons.PassTemplateTable.BACKGROUND.getBytes();
 
     /**
      * PassTemplate 中 OtherInfo列族
      */
-    private static byte[] FAMILY_C = Constants.PassTemplateTable.FAMILY_C.getBytes();
-    private static byte[] LIMIT = Constants.PassTemplateTable.LIMIT.getBytes();
-    private static byte[] START = Constants.PassTemplateTable.START.getBytes();
-    private static byte[] END = Constants.PassTemplateTable.END.getBytes();
+    private static byte[] FAMILY_C = Commons.PassTemplateTable.FAMILY_C.getBytes();
+    private static byte[] LIMIT = Commons.PassTemplateTable.LIMIT.getBytes();
+    private static byte[] START = Commons.PassTemplateTable.START.getBytes();
+    private static byte[] END = Commons.PassTemplateTable.END.getBytes();
 
     @Override
     public PassTemplate mapRow(Result result, int rowNum) throws Exception {

@@ -1,6 +1,6 @@
 package com.lingb.couponplus.passbook.mapper;
 
-import com.lingb.couponplus.passbook.constants.Constants;
+import com.lingb.couponplus.passbook.constant.Commons;
 import com.lingb.couponplus.passbook.vo.Feedback;
 import com.spring4all.spring.boot.starter.hbase.api.RowMapper;
 import org.apache.hadoop.hbase.client.Result;
@@ -10,18 +10,18 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 Feedback 映射 FeedbackVO
  *
  * @author lingb
- * @date 2019.02.14 16:15
+ * @date 2018.11.14 16:15
  */
 public class FeedbackMapper implements RowMapper<Feedback> {
 
     /**
      * Feedback 列族
      */
-    private static byte[] FAMILY_I = Constants.Feedback.FAMILY_I.getBytes();
-    private static byte[] USER_ID = Constants.Feedback.USER_ID.getBytes();
-    private static byte[] TYPE = Constants.Feedback.TYPE.getBytes();
-    private static byte[] TEMPLATE_ID = Constants.Feedback.TEMPLATE_ID.getBytes();
-    private static byte[] COMMENT = Constants.Feedback.COMMENT.getBytes();
+    private static byte[] FAMILY_I = Commons.Feedback.FAMILY_I.getBytes();
+    private static byte[] USER_ID = Commons.Feedback.USER_ID.getBytes();
+    private static byte[] TYPE = Commons.Feedback.TYPE.getBytes();
+    private static byte[] TEMPLATE_ID = Commons.Feedback.TEMPLATE_ID.getBytes();
+    private static byte[] COMMENT = Commons.Feedback.COMMENT.getBytes();
 
     @Override
     public Feedback mapRow(Result result, int rowNum) throws Exception {

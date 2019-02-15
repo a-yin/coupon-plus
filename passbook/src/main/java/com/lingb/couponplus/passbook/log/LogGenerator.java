@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
  * 日志生成器
  *
  * @author lingb
- * @date 2019.02.13 19:03
+ * @date 2018.11.13 19:03
  */
 @Slf4j
 public class LogGenerator {

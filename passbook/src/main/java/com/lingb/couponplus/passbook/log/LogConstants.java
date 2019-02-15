@@ -4,7 +4,7 @@ package com.lingb.couponplus.passbook.log;
  * 日志记录常量定义
  *
  * @author lingb
- * @date 2019.02.13 18:54
+ * @date 2018.11.13 18:54
  */
 public class LogConstants {
 

@@ -1,5 +1,7 @@
-package com.lingb.couponplus.passbook.vo;
+package com.lingb.couponplus.merchants.vo;
 
+import com.lingb.couponplus.merchants.ErrorCodeEnum;
+import com.lingb.couponplus.merchants.repository.MerchantsRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,15 +9,15 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * 商家投放的优惠券 VO
+ * 商家投放的优惠券对象VO
  *
  * @author lingb
- * @date 2019.11.14 13:23
+ * @date 2019.11.15 14:17
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PassTemplate {
+public class PassTemplateVO {
     /**
      * 所属商户 id
      */
@@ -61,4 +63,12 @@ public class PassTemplate {
      * 优惠券结束时间
      */
     private Date end;
+
+    public ErrorCodeEnum validate(MerchantsRepository merchantsRepository) {
+        if (null == merchantsRepository.findById(id)) {
+            return ErrorCodeEnum.MERCHANTS_NOT_EXIST;
+        }
+
+        return ErrorCodeEnum.SUCCESS;
+    }
 }

@@ -1,12 +1,12 @@
-package com.lingb.couponplus.passbook.constants;
+package com.lingb.couponplus.passbook.constant;
 
 /**
  * 优惠券状态
  *
  * @author lingb
- * @date 2019.02.13 15:21
+ * @date 2018.11.13 15:21
  */
-public enum PassStatus {
+public enum PassStatusEnum {
     UNUSED(1, "未被使用"),
     USED(2, "已经使用的"),
     ALL(3, "全部领取的");
@@ -21,7 +21,7 @@ public enum PassStatus {
      */
     private String desc;
 
-    PassStatus(Integer code, String desc) {
+    PassStatusEnum(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
     }

@@ -1,6 +1,6 @@
 package com.lingb.couponplus.passbook.mapper;
 
-import com.lingb.couponplus.passbook.constants.Constants;
+import com.lingb.couponplus.passbook.constant.Commons;
 import com.lingb.couponplus.passbook.vo.User;
 import com.spring4all.spring.boot.starter.hbase.api.RowMapper;
 import org.apache.hadoop.hbase.client.Result;
@@ -10,7 +10,7 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 User 映射 UserVO
  *
  * @author lingb
- * @date 2019.02.14 14:02
+ * @date 2018.11.14 14:02
  */
 public class UserRowMapper implements RowMapper<User> {
 
@@ -18,17 +18,17 @@ public class UserRowMapper implements RowMapper<User> {
     /**
      * User 中 BaseInfo 列族
      */
-    private static byte[] FAMILY_B = Constants.UserTable.FAMILY_B.getBytes();
-    private static byte[] NAME = Constants.UserTable.NAME.getBytes();
-    private static byte[] AGE = Constants.UserTable.AGE.getBytes();
-    private static byte[] SEX = Constants.UserTable.SEX.getBytes();
+    private static byte[] FAMILY_B = Commons.UserTable.FAMILY_B.getBytes();
+    private static byte[] NAME = Commons.UserTable.NAME.getBytes();
+    private static byte[] AGE = Commons.UserTable.AGE.getBytes();
+    private static byte[] SEX = Commons.UserTable.SEX.getBytes();
 
     /**
      * User 中 OtherInfo 列族
      */
-    private static byte[] FAMILY_O = Constants.UserTable.FAMILY_O.getBytes();
-    private static byte[] PHONE = Constants.UserTable.PHONE.getBytes();
-    private static byte[] ADDRESS = Constants.UserTable.ADDRESS.getBytes();
+    private static byte[] FAMILY_O = Commons.UserTable.FAMILY_O.getBytes();
+    private static byte[] PHONE = Commons.UserTable.PHONE.getBytes();
+    private static byte[] ADDRESS = Commons.UserTable.ADDRESS.getBytes();
 
     @Override
     public User mapRow(Result result, int rowNum) throws Exception {

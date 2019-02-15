@@ -1,12 +1,12 @@
-package com.lingb.couponplus.passbook.constants;
+package com.lingb.couponplus.passbook.constant;
 
 /**
- * HBase数据表及常量定义
+ * 通用常量及 HBase数据表
  *
  * @author lingb
- * @date 2019.02.13 15:38
+ * @date 2018.11.13 15:38
  */
-public class Constants {
+public class Commons {
 
     /**
      * 商户优惠券 KAfka Topic

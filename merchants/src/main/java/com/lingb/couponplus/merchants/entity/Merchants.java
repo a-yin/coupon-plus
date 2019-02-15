@@ -1,4 +1,4 @@
-package com.lingb.couponplus.passbook.entity;
+package com.lingb.couponplus.merchants.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import javax.persistence.*;
  * 商户实体类
  *
  * @author lingb
- * @date 2018.11.13 18:16
+ * @date 2019.02.15 18:16
  */
 @Data
 @NoArgsConstructor
@@ -67,6 +67,6 @@ public class Merchants {
      */
     @Basic
     @Column(name = "is_audit", nullable = false)
-    private Boolean isAudit;
+    private Boolean isAudit = false;
 }
 

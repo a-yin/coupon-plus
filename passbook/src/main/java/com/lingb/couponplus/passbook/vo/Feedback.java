@@ -1,7 +1,7 @@
 package com.lingb.couponplus.passbook.vo;
 
 import com.google.common.base.Enums;
-import com.lingb.couponplus.passbook.constants.FeedbackType;
+import com.lingb.couponplus.passbook.constant.FeedbackTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * 用户反馈
  *
  * @author lingb
- * @date 2019.02.14 13:39
+ * @date 2019.11.14 13:39
  */
 @Data
 @NoArgsConstructor
@@ -42,10 +42,10 @@ public class Feedback {
      * @return
      */
     public boolean validate() {
-        FeedbackType feedbackType = Enums.getIfPresent(
-                FeedbackType.class, this.type.toUpperCase()
+        FeedbackTypeEnum feedbackTypeEnum = Enums.getIfPresent(
+                FeedbackTypeEnum.class, this.type.toUpperCase()
         ).orNull();
-//        return !(null == feedbackType || null == comment);
-      return (null != feedbackType && null != comment);
+//        return !(null == feedbackTypeEnum || null == comment);
+      return (null != feedbackTypeEnum && null != comment);
     }
 }

@@ -1,12 +1,12 @@
-package com.lingb.couponplus.passbook.constants;
+package com.lingb.couponplus.passbook.constant;
 
 /**
  * 反馈类型
  *
  * @author lingb
- * @date 2019.02.13 15:24
+ * @date 2018.11.13 15:24
  */
-public enum FeedbackType {
+public enum FeedbackTypeEnum {
 
     PASS(1, "针对优惠券的反馈"),
     APP(2, "针对卡包 APP 的反馈");
@@ -21,7 +21,7 @@ public enum FeedbackType {
      */
     private String desc;
 
-    FeedbackType(Integer code, String desc) {
+    FeedbackTypeEnum(Integer code, String desc) {
     }
 
     public Integer getCode() {

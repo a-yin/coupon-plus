@@ -5,15 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 统一响应对象
+ * 统一响应结果对象VO
  *
  * @author lingb
- * @date 2019.02.15 14:24
+ * @date 2018.11.15 14:24
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Response {
+public class ResultVO {
 
     private Integer code;
 
@@ -21,7 +21,7 @@ public class Response {
 
     private Object data;
 
-    public Response(Object data) {
+    public ResultVO(Object data) {
         this.data = data;
     }
 }

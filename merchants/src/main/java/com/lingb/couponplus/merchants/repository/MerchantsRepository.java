@@ -3,13 +3,11 @@ package com.lingb.couponplus.merchants.repository;
 import com.lingb.couponplus.merchants.entity.Merchants;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
 /**
  * 商户 Dao接口
  *
  * @author lingb
- * @date 2019.02.13 18:44
+ * @date 2018.11.13 18:44
  */
 public interface MerchantsRepository extends JpaRepository<Merchants, Integer> {
     /**
@@ -34,5 +32,5 @@ public interface MerchantsRepository extends JpaRepository<Merchants, Integer> {
      * @param ids 商户 ids
      * @return {@link Merchants}
      */
-    List<Merchants> listByIds(List<Integer> ids);
+//    List<Merchants> listByIds(List<Integer> ids);
 }

@@ -4,7 +4,7 @@ package com.lingb.couponplus.merchants.constant;
  * 优惠券背景色枚举
  *
  * @author lingb
- * @date 2019.02.15 11:25
+ * @date 2018.11.15 11:25
  */
 public enum TemplateColorEnum {
 

@@ -4,7 +4,7 @@ package com.lingb.couponplus.merchants.constant;
  * 通用常量
  *
  * @author lingb
- * @date 2019.02.15 11:18
+ * @date 2018.11.15 11:18
  */
 public class Commons {
 

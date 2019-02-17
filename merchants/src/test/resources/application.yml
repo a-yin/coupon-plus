@@ -12,7 +12,6 @@ spring:
     listener:
       concurrency: 4
 
-
 server:
   port: 8089
 

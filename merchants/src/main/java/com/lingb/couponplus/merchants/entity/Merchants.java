@@ -10,7 +10,7 @@ import javax.persistence.*;
  * 商户实体类
  *
  * @author lingb
- * @date 2019.02.15 18:16
+ * @date 2018.11.15 18:16
  */
 @Data
 @NoArgsConstructor

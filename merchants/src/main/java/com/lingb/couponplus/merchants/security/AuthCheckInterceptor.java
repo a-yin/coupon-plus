@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * 权限拦截器
  *
  * @author lingb
- * @date 2019.11.15 12:33
+ * @date 2018.11.15 12:33
  */
 @Component
 public class AuthCheckInterceptor implements HandlerInterceptor{

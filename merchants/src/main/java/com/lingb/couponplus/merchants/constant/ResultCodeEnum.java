@@ -1,12 +1,12 @@
-package com.lingb.couponplus.merchants.enum;
+package com.lingb.couponplus.merchants.constant;
 
 /**
  * 错误码枚举
  *
  * @author lingb
- * @date 2019.11.15 11:31
+ * @date 2018.11.15 11:31
  */
-public enum ErrorCodeEnum {
+public enum ResultCodeEnum {
 
     SUCCESS(0, ""),
     DUPLICATE_NAME(1, "商户名字重复"),
@@ -26,7 +26,7 @@ public enum ErrorCodeEnum {
      */
     private String desc;
 
-    ErrorCodeEnum(Integer code, String dsc) {
+    ResultCodeEnum(Integer code, String dsc) {
         this.code = code;
         this.desc = desc;
     }

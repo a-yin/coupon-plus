@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lingb.couponplus</groupId>
-    <artifactId>passbook</artifactId>
+    <artifactId>merchant</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>passbook</name>
-    <description>passbook</description>
+    <name>merchant</name>
+    <description>merchant</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -81,12 +81,6 @@
             <artifactId>snakeyaml</artifactId>
             <version>1.17</version>
         </dependency>
-        <!-- HBase 依赖-->
-        <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>spring-boot-starter-hbase</artifactId>
-            <version>1.0.0.RELEASE</version>
-        </dependency>
         <!-- 简化JavaBean 代码依赖-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -104,11 +98,10 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>UserPassbook</finalName>
+        <finalName>Merchant</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

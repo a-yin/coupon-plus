@@ -22,7 +22,7 @@ public class LogGenerator {
      * @param action 日志类型
      * @param info   日志信息，可以为 null
      */
-    public static void getLog(HttpServletRequest request, Long userId, String action, Object info) {
+    public static void genLog(HttpServletRequest request, Long userId, String action, Object info) {
         log.info(
                 JSON.toJSONString(
                         new LogObject(action, userId, System.currentTimeMillis(), request.getRemoteAddr(), info)

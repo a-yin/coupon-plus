@@ -1,49 +1,40 @@
 package com.lingb.couponplus.passbook.mapper;
 
-import com.lingb.couponplus.passbook.constant.Commons;
-import com.lingb.couponplus.passbook.vo.Pass;
+import com.lingb.couponplus.passbook.constant.HBaseTable;
+import com.lingb.couponplus.passbook.vo.PassVO;
 import com.spring4all.spring.boot.starter.hbase.api.RowMapper;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.util.Bytes;
 
 /**
- * HBase数据库 Pass 映射 PassVO
+ * HBase数据库 PassVO 映射 PassVO
  *
  * @author lingb
  * @date 2018.11.14 16:06
  */
-public class PassRowMapper implements RowMapper<Pass> {
-
-    /**
-     * Pass 列族
-     */
-    private static byte[] FAMILY_I = Commons.PassTable.FAMILY_I.getBytes();
-    private static byte[] USER_ID = Commons.PassTable.USER_ID.getBytes();
-    private static byte[] TEMPLATE_ID = Commons.PassTable.TEMPLATE_ID.getBytes();
-    private static byte[] TOKEN = Commons.PassTable.TOKEN.getBytes();
-    private static byte[] ASSIGNED_DATE = Commons.PassTable.ASSIGNED_DATE.getBytes();
-    private static byte[] CON_DATE = Commons.PassTable.CON_DATE.getBytes();
+public class PassRowMapper implements RowMapper<PassVO> {
 
     @Override
-    public Pass mapRow(Result result, int rowNum) throws Exception {
-        Pass pass = new Pass();
-        pass.setRowKey(Bytes.toString(result.getRow()));
-        pass.setUserId(Bytes.toLong(result.getValue(FAMILY_I, USER_ID)));
-        pass.setTemplateId(Bytes.toString(result.getValue(FAMILY_I, TEMPLATE_ID)));
-        pass.setToken(Bytes.toString(result.getValue(FAMILY_I, TOKEN)));
+    public PassVO mapRow(Result result, int rowNum) throws Exception {
+        PassVO passVO = new PassVO();
+        passVO.setRowKey(Bytes.toString(result.getRow()));
+        passVO.setUserId(Bytes.toLong(result.getValue(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.USER_ID_BYTE)));
+        passVO.setTemplateId(Bytes.toString(result.getValue(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.TEMPLATE_ID_BYTE)));
+        passVO.setToken(Bytes.toString(result.getValue(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.TOKEN_BYTE)));
 
         String[] patterns = new String[]{"yyyy-mm-dd"};
-        pass.setAssignedDate(DateUtils.parseDate(Bytes.toString(result.getValue(FAMILY_I, ASSIGNED_DATE)), patterns));
+        passVO.setAssignedDate(DateUtils.parseDate(
+                Bytes.toString(result.getValue(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.ASSIGNED_DATE_BYTE)), patterns));
 
-        String conDate = Bytes.toString(result.getValue(FAMILY_I, CON_DATE));
+        String conDate = Bytes.toString(result.getValue(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.CON_DATE_BYTE));
         if (conDate.equals(-1)) {
-            pass.setConDate(null);
+            passVO.setConDate(null);
 
         } else {
-            pass.setConDate(DateUtils.parseDate(conDate, patterns));
+            passVO.setConDate(DateUtils.parseDate(conDate, patterns));
         }
 
-        return pass;
+        return passVO;
     }
 }

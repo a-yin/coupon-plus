@@ -10,7 +10,7 @@ import java.util.Date;
  * 商户投放的优惠券 VO
  *
  * @author lingb
- * @date 2019.11.14 13:23
+ * @date 2018.11.18 13:23
  */
 @Data
 @NoArgsConstructor

@@ -27,7 +27,7 @@ import java.util.List;
  * 优惠券库存 Service接口的实现
  *
  * @author lingb
- * @date 2019.02.18 21:57
+ * @date 2018.11.21 21:57
  */
 @Slf4j
 @Service

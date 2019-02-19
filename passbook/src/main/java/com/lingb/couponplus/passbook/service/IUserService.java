@@ -7,7 +7,7 @@ import com.lingb.couponplus.passbook.vo.UserVO;
  * 用户 Service 接口
  *
  * @author lingb
- * @date 2019.02.18 22:49
+ * @date 2018.11.20 22:49
  */
 public interface IUserService {
 

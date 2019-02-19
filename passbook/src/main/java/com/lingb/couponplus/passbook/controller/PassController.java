@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  * 优惠券 Controller
  *
  * @author lingb
- * @date 2018.11.18 23:53
+ * @date 2018.11.22 10:53
  */
 @Slf4j
 @RestController
@@ -188,7 +188,7 @@ public class PassController {
      * @return {@link ResultVO}
      * */
     @ResponseBody
-    @GetMapping("/getfeedback")
+    @GetMapping("/listfeedback")
     ResultVO listFeedback(Long userId) {
 
         LogGenerator.genLog(

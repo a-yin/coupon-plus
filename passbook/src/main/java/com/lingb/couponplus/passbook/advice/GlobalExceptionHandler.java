@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
  * 全局异常处理
  *
  * @author lingb
- * @date 2018.11.18 10:14
+ * @date 2018.11.19 10:14
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

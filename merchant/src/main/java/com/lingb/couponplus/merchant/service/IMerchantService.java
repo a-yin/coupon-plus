@@ -8,7 +8,7 @@ import com.lingb.couponplus.merchant.vo.ResultVO;
  * Merchant 业务接口
  *
  * @author lingb
- * @date 2011.11.16 17:38
+ * @date 2018.11.16 17:38
  */
 public interface IMerchantService {
 

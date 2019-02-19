@@ -4,7 +4,7 @@ package com.lingb.couponplus.passbook.constant;
  * 反馈类型
  *
  * @author lingb
- * @date 2018.11.13 15:24
+ * @date 2018.11.18 15:24
  */
 public enum FeedbackTypeEnum {
 

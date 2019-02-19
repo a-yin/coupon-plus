@@ -4,7 +4,7 @@ package com.lingb.couponplus.passbook.constant;
  * HBase数据表
  *
  * @author lingb
- * @date 2019.02.18 14:00
+ * @date 2018.11.18 14:00
  */
 public class HBaseTable {
 

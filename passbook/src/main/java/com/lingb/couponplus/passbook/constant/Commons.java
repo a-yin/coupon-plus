@@ -4,7 +4,7 @@ package com.lingb.couponplus.passbook.constant;
  * 通用常量
  *
  * @author lingb
- * @date 2018.11.13 15:38
+ * @date 2018.11.18 15:38
  */
 public class Commons {
 
@@ -16,7 +16,7 @@ public class Commons {
     /**
      * token 文件存储目录
      */
-    public static final String TOKEN_DIR = "/tmp/token/";
+    public static final String TOKEN_DIR = "/temp/token/";
 
     /**
      * 已使用的 token 文件后缀名

@@ -20,7 +20,7 @@ import java.io.IOException;
  * HBasePass Service接口的实现
  *
  * @author lingb
- * @date 2019.02.18 10:46
+ * @date 2018.11.20 10:46
  */
 @Slf4j
 @Service
@@ -33,7 +33,7 @@ public class HBasePassServiceImpl implements IHBasePassService {
     public boolean dropPassTemplateToHBase(PassTemplateVO passTemplateVO) {
 
         if (null == passTemplateVO) {
-            // 可定义Error 返回
+            // 可定义ErrorCode 返回
             return false;
         }
 

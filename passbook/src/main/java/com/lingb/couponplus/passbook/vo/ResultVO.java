@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
  * 统一响应结果 VO
  *
  * @author lingb
- * @date 2019.02.18 13:14
+ * @date 2018.11.18 13:14
  */
 @Data
 @NoArgsConstructor
@@ -16,35 +16,39 @@ import lombok.NoArgsConstructor;
 public class ResultVO {
 
     /**
-     * 错误码: 正确返回 0
+     * 返回码
      */
-    private Integer errorCode = 0;
+    private Integer code;
 
     /**
-     * 错误信息，正确返回空字符串
+     * 返回信息
      */
-    private String errorMsg = "";
+    private String msg;
 
     /** 返回值对象 */
     private Object data;
 
     /**
-     * <h2>正确的响应构造函数</h2>
-     * */
+     * 正确响应构造函数，
+     * 返回码正确返回 0
+     * 返回信息正确返回 ""
+     */
     public ResultVO(Object data) {
+        this.code = 0;
+        this.msg = "";
         this.data = data;
     }
 
     /**
-     * <h2>空响应</h2>
-     * */
+     * 空响应
+     */
     public static ResultVO success() {
         return new ResultVO();
     }
 
     /**
-     * <h2>错误响应</h2>
-     * */
+     * 错误响应
+     */
     public static ResultVO failure(String errorMsg) {
         return new ResultVO(-1, errorMsg, null);
     }

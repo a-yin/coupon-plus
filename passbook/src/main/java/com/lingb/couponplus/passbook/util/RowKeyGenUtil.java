@@ -19,7 +19,7 @@ public class RowKeyGenUtil {
      * 根据提供的 PassTemplate 对象生成 RowKey
      * PassTemplate 的 RowKey = 商户 id + "_" + 优惠券标题
      *
-     * @param passTemplate {@link PassTemplate}
+     * @param passTemplateVO {@link PassTemplateVO}
      * @return String RowKey
      */
     public static String genPassTemplateRowKey(PassTemplateVO passTemplateVO) {
@@ -35,7 +35,7 @@ public class RowKeyGenUtil {
      * 根据提供的领取优惠券请求生成 RowKey, 只可以在领取优惠券的时候使用
      * Pass的 RowKey = reversed(userId) + inverse(timestamp) + PassTemplate RowKey
      *
-     * @param request {@link GainPassTemplateRequest}
+     * @param request {@link GainPassTemplateReqVO}
      * @return String RowKey
      */
     public static String genPassRowKey(GainPassTemplateReqVO request) {
@@ -48,7 +48,7 @@ public class RowKeyGenUtil {
     /**
      * 根据 Feedback 构造 RowKey
      *
-     * @param feedback {@link FeedbackVO}
+     * @param feedbackVO {@link FeedbackVO}
      * @return String RowKey
      */
     public static String genFeedbackRowKey(FeedbackVO feedbackVO) {

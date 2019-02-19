@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
  * 日志对象
  *
  * @author lingb
- * @date 2018.11.13 18:59
+ * @date 2018.11.18 18:59
  */
 @Data
 @NoArgsConstructor

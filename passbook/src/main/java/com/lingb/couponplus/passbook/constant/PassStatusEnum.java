@@ -4,7 +4,7 @@ package com.lingb.couponplus.passbook.constant;
  * 优惠券状态
  *
  * @author lingb
- * @date 2018.11.13 15:21
+ * @date 2018.11.18 15:21
  */
 public enum PassStatusEnum {
     UNUSED(1, "未被使用"),

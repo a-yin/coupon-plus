@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
  * 用户 VO
  *
  * @author lingb
- * @date 2018.11.14 19:23
+ * @date 2018.11.18 19:23
  */
 @Data
 @NoArgsConstructor

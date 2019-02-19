@@ -9,7 +9,7 @@ import java.util.List;
  * 商户 Dao接口
  *
  * @author lingb
- * @date 2018.11.13 18:44
+ * @date 2018.11.19 18:44
  */
 public interface MerchantRepository extends JpaRepository<Merchant, Integer> {
     /**

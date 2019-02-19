@@ -11,7 +11,7 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 PassTemplateVO 映射 PassTemplateVO
  *
  * @author lingb
- * @date 2018.11.14 16:15
+ * @date 2018.11.19 16:15
  */
 public class PassTemplateRowMapper implements RowMapper<PassTemplateVO> {
 

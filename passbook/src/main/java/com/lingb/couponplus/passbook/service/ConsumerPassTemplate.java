@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * 接收Kafka 中 PassTemplate
  *
  * @author lingb
- * @date 2018.11.18 10:39
+ * @date 2018.11.19 10:39
  */
 @Slf4j
 @Component
@@ -32,7 +32,7 @@ public class ConsumerPassTemplate {
      * @param partition  分区 id
      * @param topic  主题
      */
-    @KafkaListener(topics = {Commons.TEMPLATE_TOPIC})
+    @KafkaListener(topics = {Commons.TEMPLATE_TOPIC})  // @KafkaListener Kafka监听器，该方法自动接收商户投放的优惠券
     public void receive(@Payload String passTemplate,
                         @Header(KafkaHeaders.MESSAGE_KEY) String key,
                         @Header(KafkaHeaders.PARTITION_ID) int partition,
@@ -46,6 +46,7 @@ public class ConsumerPassTemplate {
             return;
         }
 
+        // 将商户投放的优惠券存储到HBase 中
         log.info("DropPassTemplateToHBase: {}",
                 hBasePassService.dropPassTemplateToHBase(passTemplateVO));
     }

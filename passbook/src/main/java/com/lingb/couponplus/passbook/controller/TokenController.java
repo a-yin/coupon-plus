@@ -26,7 +26,7 @@ import java.util.stream.Stream;
  * Token Controller
  *
  * @author lingb
- * @date 2019.02.18 23:53
+ * @date 2018.11.22 14:53
  */
 @Slf4j
 @RestController
@@ -42,7 +42,6 @@ public class TokenController {
         this.redisTemplate = redisTemplate;
     }
 
-    // 3617cf73e7a1099097242115042cb7b0
     @GetMapping("/upload")
     public String upload() {
         return "upload";

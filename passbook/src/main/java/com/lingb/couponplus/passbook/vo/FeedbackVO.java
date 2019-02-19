@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * 用户反馈信息 VO
  *
  * @author lingb
- * @date 2019.11.14 13:39
+ * @date 2018.11.18 13:39
  */
 @Data
 @NoArgsConstructor

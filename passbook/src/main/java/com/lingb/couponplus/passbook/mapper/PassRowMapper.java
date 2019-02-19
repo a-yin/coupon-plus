@@ -11,7 +11,7 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 PassVO 映射 PassVO
  *
  * @author lingb
- * @date 2018.11.14 16:06
+ * @date 2018.11.19 16:06
  */
 public class PassRowMapper implements RowMapper<PassVO> {
 
@@ -34,6 +34,8 @@ public class PassRowMapper implements RowMapper<PassVO> {
         } else {
             passVO.setConDate(DateUtils.parseDate(conDate, patterns));
         }
+
+        passVO.setRowKey(Bytes.toString(result.getRow()));
 
         return passVO;
     }

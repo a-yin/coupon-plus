@@ -11,7 +11,7 @@ spring:
   data:
     hbase:
       quorum: 127.0.0.1:2181
-      rootDir: file:G:/DevWorkSpace/IDEA/coupon-plus/passbook/hbase_data
+      rootDir: /G:/DevWorkSpace/IDEA/coupon-plus/passbook/hbase_data
       nodeParent: /hbase
   kafka:
       bootstrap-servers: 127.0.0.1:9092

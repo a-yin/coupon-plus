@@ -30,7 +30,7 @@ import java.util.List;
  * 用户领取优惠券请求 Service 接口的实现
  *
  * @author lingb
- * @date 2018.11.18 23:43
+ * @date 2018.11.20 23:43
  */
 @Slf4j
 @Service
@@ -53,10 +53,26 @@ public class GainPassTemplateServiceImpl implements IGainPassTemplateService {
         this.redisTemplate = redisTemplate;
     }
 
+    /**
+     * 用户领取优惠券
+     * 1.根据提供的 PassTemplate 对象生成 RowKey -> passTemplateId
+     * 2.PassTemplateVO passTemplate = hbaseTemplate.get(
+     *       HBaseTable.PassTemplateTable.TABLE_NAME,
+     *       passTemplateId,
+     *       new PassTemplateRowMapper()
+     *  获取优惠券
+     * 3.验证 2中获取到的优惠券，是否领取已是最大个数限制，又是否有效日期
+     * 4.减去该种优惠券的 limit
+     * 5.将该张优惠券保存到用户优惠券表
+     *
+     * @param request {@link GainPassTemplateReqVO}
+     * @return {@link ResultVO}
+     * @throws Exception
+     */
     @Override
     public ResultVO gainPassTemplate(GainPassTemplateReqVO request) throws Exception {
 
-        PassTemplateVO passTemplate = null;
+        PassTemplateVO passTemplate;
         String passTemplateId = RowKeyGenUtil.genPassTemplateRowKey(
                 request.getPassTemplateVO());
 
@@ -78,15 +94,15 @@ public class GainPassTemplateServiceImpl implements IGainPassTemplateService {
             return ResultVO.failure("PassTemplate Limit Max!");
         }
 
-        Date cur = new Date();
-        if (!(cur.getTime() >= passTemplate.getStart().getTime()
-                && cur.getTime() < passTemplate.getEnd().getTime())) {
+        Date now = new Date();
+        if (!(now.getTime() >= passTemplate.getStart().getTime()
+                && now.getTime() < passTemplate.getEnd().getTime())) {
             log.error("PassTemplate ValidTime Error: {}",
                     JSON.toJSONString(request.getPassTemplateVO()));
             return ResultVO.failure("PassTemplate ValidTime Error!");
         }
 
-        // 减去优惠券的 limit
+        // 减去该种优惠券的 limit
         if (passTemplate.getLimit() != -1) {
             List<Mutation> datas = new ArrayList<>();
 
@@ -99,7 +115,7 @@ public class GainPassTemplateServiceImpl implements IGainPassTemplateService {
                     datas);
         }
 
-        // 将优惠券保存到用户优惠券表
+        // 将该张优惠券保存到用户优惠券表
         if (!addPassForUser(request, passTemplate.getId(), passTemplateId)) {
             return ResultVO.failure("GainPassTemplate Failure!");
         }
@@ -111,12 +127,12 @@ public class GainPassTemplateServiceImpl implements IGainPassTemplateService {
      * <h2>给用户添加优惠券</h2>
      *
      * @param request        {@link GainPassTemplateReqVO}
-     * @param merchantsId    商户 id
+     * @param merchantId    商户 id
      * @param passTemplateId 优惠券 id
      * @return true/false
      */
     private boolean addPassForUser(GainPassTemplateReqVO request,
-                                   Integer merchantsId, String passTemplateId) throws Exception {
+                                   Integer merchantId, String passTemplateId) throws Exception {
 
         List<Mutation> datas = new ArrayList<>();
         Put put = new Put(Bytes.toBytes(RowKeyGenUtil.genPassRowKey(request)));
@@ -131,7 +147,7 @@ public class GainPassTemplateServiceImpl implements IGainPassTemplateService {
                 log.error("Token not exist: {}", passTemplateId);
                 return false;
             }
-            recordTokenToFile(merchantsId, passTemplateId, token);
+            recordTokenToFile(merchantId, passTemplateId, token);
             put.addColumn(HBaseTable.PassTable.FAMILY_I_BYTE, HBaseTable.PassTable.TOKEN_BYTE,
                     Bytes.toBytes(token));
         } else {

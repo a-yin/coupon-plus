@@ -10,7 +10,7 @@ import java.util.List;
  * 优惠券库存 VO
  *
  * @author lingb
- * @date 2019.02.18 22:39
+ * @date 2018.11.18 22:39
  */
 @Data
 @NoArgsConstructor

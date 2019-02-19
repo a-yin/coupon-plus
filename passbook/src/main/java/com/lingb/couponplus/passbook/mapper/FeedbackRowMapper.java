@@ -10,7 +10,7 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 FeedbackVO 映射 FeedbackVO
  *
  * @author lingb
- * @date 2018.11.14 16:15
+ * @date 2018.11.19 16:15
  */
 public class FeedbackRowMapper implements RowMapper<FeedbackVO> {
 

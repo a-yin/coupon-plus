@@ -10,7 +10,7 @@ import org.apache.hadoop.hbase.util.Bytes;
  * HBase数据库 UserVO 映射 UserVO
  *
  * @author lingb
- * @date 2018.11.14 14:02
+ * @date 2018.11.19 14:02
  */
 public class UserRowMapper implements RowMapper<UserVO> {
 

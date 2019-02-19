@@ -17,7 +17,7 @@ import java.util.Date;
  * 商户业务测试类
  *
  * @author lingb
- * @date 2019.11.16 22:56
+ * @date 2018.11.16 22:56
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -50,8 +50,8 @@ public class MerchantServiceTest {
     public void testDropPassTemplate() {
 
         PassTemplateVO passTemplateVO = new PassTemplateVO();
-        passTemplateVO.setId(9);
-        passTemplateVO.setTitle("湛江甲鸟");
+        passTemplateVO.setId(3);
+        passTemplateVO.setTitle("湛江甲鸟3");
         passTemplateVO.setSummary("简介: 甲鸟");
         passTemplateVO.setDesc("详情: 湛江甲鸟");
         passTemplateVO.setLimit(100L);

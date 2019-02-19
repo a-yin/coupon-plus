@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  * 优惠券模板信息VO
  *
  * @author lingb
- * @date 2019.02.18 22:41
+ * @date 2018.11.18 22:41
  */
 @Data
 @NoArgsConstructor
